@@ -1,16 +1,16 @@
 <p align="center">
-  <a href="https://github.com/sehermahmud/crwn-clothing-ecom">
-    <img src="./src/assets/crown.svg" alt="Logo" width="25%" height="35%">
+  <a href="https://github.com/sehermahmud/SeherEcommerce">
+    <img src="./src/assets/seherLogo.png" alt="Logo" width="25%" height="35%">
   </a>
 </p>
 
-# Crwn Clothing
+# Seher Ecommerce
 
-E-commerce app: [crwnclothingecom.com](https://github.com/sehermahmud/crwn-clothing-ecom)
+E-commerce app: [crwnclothingecom.com](https://github.com/sehermahmud/SeherEcommerce)
 
 ### Decription
 
-Crwn Clothing is a Clothing E-commerce app were people can buy hats, jacket, women stuffs...etc. This is a very big, large E-commerce project that i tried to do till the end.
+Seher Ecommerce is a Clothing E-commerce app were people can buy hats, jacket, women stuffs...etc. This is a very big, large E-commerce project that i tried to do till the end.
 
 Founded: 29/12/2020
 
@@ -66,7 +66,7 @@ Founder: Seher Mahmud
 
 ### Installation Guide
 
-1. git clone https://github.com/sehermahmud/crwn-clothing-ecom.git
+1. git clone https://github.com/sehermahmud/SeherEcommerce.git
 
 2. cd crwn-clothing-ecom: ( then you open a editer )
 
