@@ -42,6 +42,7 @@ const CheckoutPage = ({ cartItems, total }) => {
     console.log(country);
     console.log(city);
     console.log(zip);
+
   };
 
   const Citydata = [
@@ -97,6 +98,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                       id="inputFirstName"
                       value={firstName}
                       onChange={(event) => setFirstName(event.target.value)}
+                      name="First Name"
                     />
                   </div>
                   <div className="form-group col-md-6">
@@ -107,6 +109,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                       id="inputLastName"
                       value={lastName}
                       onChange={(event) => setLastName(event.target.value)}
+                      name="Last Name"
                     />
                   </div>
                 </div>
@@ -118,6 +121,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                     id="inputFullName"
                     value={fullName}
                     onChange={(event) => setFullName(event.target.value)}
+                    name="Full Name"
                   />
                 </div>
                 <div className="form-row">
@@ -129,6 +133,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                       id="inputEmail"
                       value={email}
                       onChange={(event) => setEmail(event.target.value)}
+                      name="Email"
                     />
                   </div>
                   <div className="form-group col-md-6">
@@ -139,6 +144,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                       id="inputPhoneNumber"
                       value={phoneNumber}
                       onChange={(event) => setPhoneNumber(event.target.value)}
+                      name="Phone Number"
                     />
                   </div>
                 </div>
@@ -162,9 +168,9 @@ const CheckoutPage = ({ cartItems, total }) => {
                   </div>
                 </div>
                 {cartItems.map((cartItem) => (
-                  <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+                  <CheckoutItem key={cartItem.id} cartItem={cartItem} name="cart" />
                 ))}
-                <div className="total">TOTAL: ${total}</div>
+                <div className="total" name="total">TOTAL: ${total}</div>
                 <br />
                 <Typography variant="h5">Information to reach you</Typography>
                 <br />
@@ -176,6 +182,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                     id="inputAddress"
                     value={address}
                     onChange={(event) => setAddress(event.target.value)}
+                    name="Address"
                   />
                 </div>
                 <div className="form-group">
@@ -186,6 +193,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                     id="inputAddress2"
                     value={address2}
                     onChange={(event) => setAddress2(event.target.value)}
+                    name="Address 2"
                   />
                 </div>
                 <div className="form-row">
@@ -195,6 +203,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                       id="inputCountry"
                       className="form-control"
                       onChange={(event) => setCountry(event.target.value)}
+                      name="Country"
                     >
                       {Countrydata}
                     </select>
@@ -208,6 +217,7 @@ const CheckoutPage = ({ cartItems, total }) => {
                       id="inputCity"
                       className="form-control"
                       onChange={(event) => setCity(event.target.value)}
+                      name="City"
                     >
                       {Citydata}
                     </select>
@@ -220,65 +230,65 @@ const CheckoutPage = ({ cartItems, total }) => {
                       id="inputZip"
                       value={zip}
                       onChange={(event) => setZip(event.target.value)}
+                      name="Zip"
                     />
                   </div>
                 </div>
-              </form>
-              <Typography variant="h5">Order by:</Typography>
-              <br />
-              <Card elevation={10} style={{}}>
-                <CardContent>
-                  <Typography>
-                    we will get a email, send to us, of the Information and the
-                    order you had gave
+                <br />
+                <Card elevation={10} style={{}}>
+                  <CardContent>
+                    <Typography>
+                      we will get a email, send to us, of the Information and the
+                      order you had gave
                   </Typography>
-                </CardContent>
-              </Card>
-              <div>
-                <CustomButton
-                  style={{ color: '#ff4081' }}
-                  onClick={handleSubmit}
-                >
-                  Order now
+                  </CardContent>
+                </Card>
+                <div>
+                  <CustomButton
+                    style={{ color: '#ff4081' }}
+                    onClick={handleSubmit}
+                  >
+                    Order now
                 </CustomButton>
-              </div>
+                </div>
+              </form>
             </div>
           </CardContent>
         </Card>
       ) : (
-        <div className="checkout-page">
-          <div className="checkout-header">
-            <div className="header-block">
-              <span>Product</span>
+          <div className="checkout-page">
+            <div className="checkout-header">
+              <div className="header-block">
+                <span>Product</span>
+              </div>
+              <div className="header-block">
+                <span>Description</span>
+              </div>
+              <div className="header-block">
+                <span>Quantity</span>
+              </div>
+              <div className="header-block">
+                <span>Price</span>
+              </div>
+              <div className="header-block">
+                <span>Remove</span>
+              </div>
             </div>
-            <div className="header-block">
-              <span>Description</span>
-            </div>
-            <div className="header-block">
-              <span>Quantity</span>
-            </div>
-            <div className="header-block">
-              <span>Price</span>
-            </div>
-            <div className="header-block">
-              <span>Remove</span>
-            </div>
-          </div>
-          {cartItems.length ? (
-            cartItems.map((cartItem) => (
-              <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-            ))
-          ) : (
-            <div>
-              <br />
-              <br />
-              <span style={{ fontWeight: '2em', fontSize: '2.5em' }}>
-                Your cart is empty
+            {cartItems.length ? (
+              cartItems.map((cartItem) => (
+                <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+              ))
+            ) : (
+                <div>
+                  <br />
+                  <br />
+                  <span style={{ fontWeight: '2em', fontSize: '2.5em' }}>
+                    Your cart is empty
               </span>
-            </div>
-          )}
-        </div>
-      )}
+                </div>
+              )}
+          </div>
+        )}
     </div>
   );
 };
